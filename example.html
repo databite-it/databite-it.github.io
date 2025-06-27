@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Databite - Software House AI & DevSecOps per PMI Italiane</title>
+    <meta name="description" content="Aumentiamo la produttività delle PMI italiane con software proprietario, AI e DevSecOps. Partner GitLab e AWS. Assessment gratuito.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0066CC;
+            --secondary: #00B4D8;
+            --accent: #FF6B35;
+            --text: #2C3E50;
+            --text-light: #6B7280;
+            --bg-light: #F8F9FA;
+            --white: #FFFFFF;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+            --border-radius-sm: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .tagline {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 0.2rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .cta-header {
+            background: var(--accent);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius-sm);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-header:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+        }
+
+        /* Mobile menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 8rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%230066CC" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .value-props {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .value-prop {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        .value-prop i {
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+
+        .cta-primary {
+            background: var(--accent);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .cta-primary:hover {
+            background: #e55a2b;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Competenze Section */
+        .competenze {
+            padding: 4rem 0;
+            background: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--text);
+        }
+
+        .competenze-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .competenza-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary);
+        }
+
+        .competenza-card:nth-child(2) {
+            border-top-color: var(--secondary);
+        }
+
+        .competenza-card:nth-child(3) {
+            border-top-color: var(--accent);
+        }
+
+        .competenza-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .competenza-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .competenza-card:nth-child(1) .competenza-icon {
+            color: var(--primary);
+        }
+
+        .competenza-card:nth-child(2) .competenza-icon {
+            color: var(--secondary);
+        }
+
+        .competenza-card:nth-child(3) .competenza-icon {
+            color: var(--accent);
+        }
+
+        .competenza-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .competenza-subtitle {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .competenza-list {
+            list-style: none;
+        }
+
+        .competenza-list li {
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .competenza-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* Servizi Section */
+        .servizi {
+            padding: 4rem 0;
+            background: var(--bg-light);
+        }
+
+        .servizi-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .servizio-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .servizio-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .servizio-card h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .servizio-card ul {
+            list-style: none;
+        }
+
+        .servizio-card li {
+            padding: 0.2rem 0;
+            color: var(--text-light);
+        }
+
+        /* Track Record Section */
+        .track-record {
+            padding: 4rem 0;
+            background: var(--white);
+        }
+
+        .track-record-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+
+        .track-record-column h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .track-record-list {
+            list-style: none;
+        }
+
+        .track-record-list li {
+            padding: 0.8rem 0;
+            position: relative;
+            padding-left: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .track-record-list li:last-child {
+            border-bottom: none;
+        }
+
+        .track-record-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Processo Section */
+        .processo {
+            padding: 4rem 0;
+            background: var(--bg-light);
+        }
+
+        .processo-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+
+        .step:nth-child(2) .step-number {
+            background: var(--secondary);
+        }
+
+        .step:nth-child(3) .step-number {
+            background: var(--accent);
+        }
+
+        .step:nth-child(4) .step-number {
+            background: var(--text);
+        }
+
+        .step h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-subtitle {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .step p {
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* Differenziatori Section */
+        .differenziatori {
+            padding: 4rem 0;
+            background: var(--white);
+        }
+
+        .differenziatori-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .differenziatore {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: var(--border-radius);
+            transition: all 0.3s ease;
+        }
+
+        .differenziatore:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .differenziatore-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .differenziatore h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .differenziatore p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+        }
+
+        .contact .section-title {
+            color: var(--white);
+        }
+
+        .contact-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            color: var(--text);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e1e5e9;
+            border-radius: var(--border-radius-sm);
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .trust-elements {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .trust-element {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .trust-element i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .trust-element p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            padding: 0.3rem 0;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: var(--shadow);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .hero {
+                padding: 6rem 0 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .competenze-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-elements {
+                flex-direction: column;
+            }
+
+            .processo-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .track-record-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .servizi-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 0.5rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .value-props {
+                grid-template-columns: 1fr;
+            }
+
+            .differenziatori-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo-container">
+                <a href="#" class="logo">Databite</a>
+                <div class="tagline">Soluzioni innovative per PMI e Startup</div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#servizi">Servizi</a></li>
+                <li><a href="#prodotti">Prodotti</a></li>
+                <li><a href="#processo">Come Lavoriamo</a></li>
+                <li><a href="#partnership">Partnership</a></li>
+                <li><a href="#contatti" class="cta-header">Contattaci</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in-up">
+                <h1>Aumentiamo la produttività delle PMI italiane</h1>
+                <p class="hero-subtitle">
+                    Software di qualità, AI e metodologie innovative per ridurre il time to market e migliorare il posizionamento strategico sul mercato
+                </p>
+                
+                <div class="value-props">
+                    <div class="value-prop">
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>Software proprietario</strong> integrable as-is nei tuoi processi</span>
+                    </div>
+                    <div class="value-prop">
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>30+ anni di expertise</strong> combinata in AI, DevSecOps e Full Stack</span>
+                    </div>
+                    <div class="value-prop">
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>Partner certificato</strong> GitLab e AWS</span>
+                    </div>
+                    <div class="value-prop">
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>Assessment gratuito</strong> di 1 ora per ogni progetto</span>
+                    </div>
+                </div>
+
+                <a href="#contatti" class="cta-primary">Richiedi Assessment Gratuito</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competenze Section -->
+    <section class="competenze" id="competenze">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Le nostre competenze core</h2>
+            
+            <div class="competenze-grid">
+                <div class="competenza-card animate-on-scroll">
+                    <div class="competenza-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI & DATA ENGINEERING</h3>
+                    <div class="competenza-subtitle">Competenza distintiva</div>
+                    <ul class="competenza-list">
+                        <li>Soluzioni intelligenti con Python e Clojure</li>
+                        <li>Machine learning e analisi predittiva</li>
+                        <li>Automazione processi decisionali</li>
+                        <li>Pipeline di data engineering scalabili</li>
+                    </ul>
+                </div>
+
+                <div class="competenza-card animate-on-scroll">
+                    <div class="competenza-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>DEVSECOPS & INFRASTRUTTURE</h3>
+                    <div class="competenza-subtitle">Competenza distintiva</div>
+                    <ul class="competenza-list">
+                        <li>Architetture cloud-native su AWS</li>
+                        <li>Kubernetes, Docker, CI/CD avanzate</li>
+                        <li>Partner ufficiale GitLab enterprise</li>
+                        <li>Security-by-design</li>
+                    </ul>
+                </div>
+
+                <div class="competenza-card animate-on-scroll">
+                    <div class="competenza-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>SVILUPPO FULL STACK</h3>
+                    <div class="competenza-subtitle">Soluzioni chiavi in mano</div>
+                    <ul class="competenza-list">
+                        <li>Da landing page a gestionali completi</li>
+                        <li>Stack: Node.js, React, Python, Clojure</li>
+                        <li>Delivery flessibile: nostro cloud o del cliente</li>
+                        <li>Full remote o on-site</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servizi Section -->
+    <section class="servizi" id="servizi">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">I nostri servizi</h2>
+            
+            <div class="servizi-grid">
+                <div class="servizio-card animate-on-scroll">
+                    <h4>Software Custom</h4>
+                    <ul>
+                        <li>Soluzioni verticali su misura</li>
+                        <li>Dashboard di monitoraggio avanzate</li>
+                        <li>Gestionali completi e scalabili</li>
+                    </ul>
+                </div>
+
+                <div class="servizio-card animate-on-scroll">
+                    <h4>SaaS Proprietari</h4>
+                    <ul>
+                        <li>Soluzioni scalabili per problemi specifici</li>
+                        <li>API facilmente integrabili nei tuoi processi</li>
+                        <li>Scopri tutti i servizi <a href="tbd">nella pagina dedicata</a></li>
+                    </ul>
+                </div>
+
+                <div class="servizio-card animate-on-scroll">
+                    <h4>Partnership Strategiche</h4>
+                    <ul>
+                        <li>GitLab Partner Certificato</li>
+                        <li>AWS Cloud Architecture</li>
+                        <li>Network reseller consolidato</li>
+                    </ul>
+                </div>
+
+                <div class="servizio-card animate-on-scroll">
+                    <h4>Consulenza Specialistica</h4>
+                    <ul>
+                        <li>Time & Material su tutti gli ambiti IT</li>
+                        <li>Assessment infrastrutturali</li>
+                        <li>Modernizzazione legacy</li>
+                        <li>Integrazione AI/ML</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Track Record Section -->
+    <section class="track-record">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Risultati concreti per i nostri clienti</h2>
+            
+            <div class="track-record-grid">
+                <div class="track-record-column animate-on-scroll">
+                    <h4>Startup in Co-creazione</h4>
+                    <ul class="track-record-list">
+                        <li>Architetture scalabili from scratch</li>
+                        <li>MVP con focus product-market fit</li>
+                        <li>Setup ecosistemi sviluppo agile</li>
+                    </ul>
+                </div>
+
+                <div class="track-record-column animate-on-scroll">
+                    <h4>Aziende Strutturate</h4>
+                    <ul class="track-record-list">
+                        <li>Bootstrap ambienti produzione enterprise</li>
+                        <li>Hardening e protocolli sicurezza</li>
+                        <li>Autenticazione e pagamenti (Stripe)</li>
+                        <li>Migrazione cloud-native</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Processo Section -->
+    <section class="processo" id="processo">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Il nostro processo trasparente</h2>
+            
+            <div class="processo-steps">
+                <div class="step animate-on-scroll">
+                    <div class="step-number">1</div>
+                    <h4>PRIMO CONTATTO</h4>
+                    <div class="step-subtitle">Raccontaci la tua sfida</div>
+                    <p>Scrivi chi sei e di cosa hai bisogno.</p>
+                </div>
+
+                <div class="step animate-on-scroll">
+                    <div class="step-number">2</div>
+                    <h4>ASSESSMENT GRATUITO</h4>
+                    <div class="step-subtitle">Conosciamoci meglio</div>
+                    <p>Consulenza remota gratuita per comprendere il tuo contesto ed esigenze</p>
+                </div>
+
+                <div class="step animate-on-scroll">
+                    <div class="step-number">3</div>
+                    <h4>SOLUZIONE SU MISURA</h4>
+                    <div class="step-subtitle">Proposta personalizzata</div>
+                    <p>Identifichiamo la soluzione ottimale per te: consulenza vs progetto chiavi in mano. Offerta dettagliata e trasparente.</p>
+                </div>
+
+                <div class="step animate-on-scroll">
+                    <div class="step-number">4</div>
+                    <h4>INIZIO LAVORI</h4>
+                    <div class="step-subtitle">Sviluppo agile</div>
+                    <p>Metodologie iterative. Sprint planning e feedback continuo. Delivery incrementale secondo una roadmap chiara.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Differenziatori Section -->
+    <section class="differenziatori">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Perché scegliere Databite</h2>
+            
+            <div class="differenziatori-grid">
+                <div class="differenziatore animate-on-scroll">
+                    <div class="differenziatore-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div>
+                        <h4>Software Proprietario Plug & Play</h4>
+                        <p>Soluzioni pronte che si integrano immediatamente</p>
+                    </div>
+                </div>
+
+                <div class="differenziatore animate-on-scroll">
+                    <div class="differenziatore-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div>
+                        <h4>Partnership Consolidate</h4>
+                        <p>Accesso privilegiato a tecnologie enterprise</p>
+                    </div>
+                </div>
+
+                <div class="differenziatore animate-on-scroll">
+                    <div class="differenziatore-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div>
+                        <h4>Expertise Multi-Industry</h4>
+                        <p>Soluzioni trasversali per qualsiasi settore</p>
+                    </div>
+                </div>
+
+                <div class="differenziatore animate-on-scroll">
+                    <div class="differenziatore-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div>
+                        <h4>Metodologia Agile Estrema</h4>
+                        <p>Tutti gli strumenti per il miglior risultato</p>
+                    </div>
+                </div>
+
+                <div class="differenziatore animate-on-scroll">
+                    <div class="differenziatore-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div>
+                        <h4>Focus AI & Data Engineering</h4>
+                        <p>Automazione e insights business-critical</p>
+                    </div>
+                </div>
+
+                <div class="differenziatore animate-on-scroll">
+                    <div class="differenziatore-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div>
+                        <h4>DevSecOps Native</h4>
+                        <p>Sicurezza integrata fin dal design</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contatti">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Iniziamo a lavorare insieme</h2>
+            <p class="contact-subtitle animate-on-scroll">
+                Richiedi il tuo assessment gratuito. Analizzeremo insieme le tue esigenze e identificheremo la soluzione migliore per te.
+            </p>
+            
+            <form class="contact-form animate-on-scroll" id="contactForm">
+                <div class="form-row">
+                    <!-- <div class="form-group">
+                        <label for="nome">Nome *</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div> -->
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="azienda">Azienda</label>
+                        <input type="text" id="azienda" name="azienda">
+                    </div>
+                </div>
+
+                <!-- <div class="form-row">
+                    <div class="form-group">
+                        <label for="azienda">Azienda</label>
+                        <input type="text" id="azienda" name="azienda">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Telefono</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+                </div> -->
+
+                <!-- <div class="form-group">
+                    <label for="progetto">Tipo di progetto</label>
+                    <select id="progetto" name="progetto">
+                        <option value="">Seleziona il tipo di progetto</option>
+                        <option value="software-custom">Sviluppo software custom</option>
+                        <option value="ai-consulting">Consulenza AI/Data Engineering</option>
+                        <option value="devsecops">DevSecOps e infrastruttura</option>
+                        <option value="assessment">Assessment tecnologico</option>
+                        <option value="altro">Altro</option>
+                    </select>
+                </div> -->
+
+                <div class="form-group">
+                    <label for="descrizione">Descrivi il tuo progetto *</label>
+                    <textarea id="descrizione" name="descrizione" placeholder="Raccontaci di cosa hai bisogno, quali sono i tuoi obiettivi e le sfide che stai affrontando..." required></textarea>
+                </div>
+
+                <!-- <div class="form-row">
+                    <div class="form-group">
+                        <label for="budget">Budget indicativo</label>
+                        <select id="budget" name="budget">
+                            <option value="">Seleziona budget</option>
+                            <option value="5k-15k">5.000€ - 15.000€</option>
+                            <option value="15k-30k">15.000€ - 30.000€</option>
+                            <option value="30k-50k">30.000€ - 50.000€</option>
+                            <option value="50k+">50.000€+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tempistiche">Tempistiche</label>
+                        <select id="tempistiche" name="tempistiche">
+                            <option value="">Seleziona tempistiche</option>
+                            <option value="urgente">Urgente (entro 1 mese)</option>
+                            <option value="breve">Breve termine (1-3 mesi)</option>
+                            <option value="medio">Medio termine (3-6 mesi)</option>
+                            <option value="lungo">Lungo termine (6+ mesi)</option>
+                        </select>
+                    </div>
+                </div> -->
+
+                <button type="submit" class="cta-primary" style="width: 100%; margin-top: 1rem;">
+                    Richiedi Assessment Gratuito
+                </button>
+            </form>
+
+            <div class="trust-elements">
+                <div class="trust-element">
+                    <i class="fas fa-clock"></i>
+                    <p>Risposta garantita entro 24 ore</p>
+                </div>
+                <div class="trust-element">
+                    <i class="fas fa-gift"></i>
+                    <p>Assessment gratuito, senza impegno</p>
+                </div>
+                <div class="trust-element">
+                    <i class="fas fa-medal"></i>
+                    <p>30+ anni di esperienza combinata</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="partnership">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Databite</h4>
+                    <p>Soluzioni innovative per PMI e Startup</p>
+                    <p style="margin-top: 1rem; color: rgba(255, 255, 255, 0.8);">
+                        Aumentiamo la produttività delle PMI italiane con soluzioni AI, DevSecOps e sviluppo full stack di qualità enterprise.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Servizi</h4>
+                    <ul>
+                        <li><a href="#servizi">Sviluppo Custom</a></li>
+                        <li><a href="#competenze">AI & Data Engineering</a></li>
+                        <li><a href="#competenze">DevSecOps</a></li>
+                        <li><a href="#contatti">Consulenza</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Partnership</h4>
+                    <ul>
+                        <li>GitLab Partner Certificato</li>
+                        <li>AWS Partnership</li>
+                        <li>Python & Clojure</li>
+                        <li>React & Node.js</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contatti</h4>
+                    <ul>
+                        <li><a href="#contatti">Form di contatto</a></li>
+                        <li><a href="mailto:info@databite.it">info@databite.it</a></li>
+                        <li><a href="#contatti">Consulenza gratuita</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Databite SRL - Soluzioni innovative per PMI e Startup</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80; // Account for fixed header
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'var(--white)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simulate form submission
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Invio in corso...';
+            submitBtn.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                submitBtn.textContent = 'Messaggio inviato!';
+                submitBtn.style.background = '#28a745';
+                
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.background = '';
+                    this.reset();
+                }, 2000);
+            }, 1500);
+            
+            // In a real implementation, you would send the data to your backend
+            console.log('Form data:', data);
+        });
+
+        // Add some interactive hover effects
+        document.querySelectorAll('.competenza-card, .servizio-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            const rate = scrolled * -0.5;
+            
+            if (hero) {
+                hero.style.transform = `translateY(${rate}px)`;
+            }
+        });
+
+        // Add loading animation when page loads
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+            
+            // Trigger initial animations
+            document.querySelectorAll('.fade-in-up').forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>

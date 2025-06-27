@@ -1,0 +1,20 @@
+User-Agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /api/
+
+User-Agent: GoogleBot
+Allow: /
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /api/
+
+User-Agent: BingBot
+Allow: /
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /api/
+
+Host: https://databite.it
+Sitemap: https://databite.it/sitemap.xml

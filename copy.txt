@@ -1,0 +1,133 @@
+DATABITE SRL - CHI SIAMO
+=========================
+
+IDENTITÀ AZIENDALE
+------------------
+
+Databite è una software house nata dalla commistione di professionisti con eccellenti capacità tecniche nei 3 principali settori dell'informatica: full stack development, data & AI e dev-sec-ops.
+
+Siamo il punto di convergenza tra esperienza consolidata e metodologie agili, con un'expertise multidisciplinare che abbraccia l'intero spettro tecnologico. Il nostro DNA è quello di partner tecnologico esperto che accompagna le aziende - dalle startup in fase di co-creazione alle PMI strutturate - nella trasformazione digitale attraverso soluzioni software innovative, integrate e immediatamente operative.
+
+MISSIONE E VISIONE
+------------------
+
+**Missione:** Aumentare la produttività delle PMI italiane con software di qualità e metodologie di sviluppo innovative. Usiamo l'AI per creare software proprietario da integrare nei processi aziendali dei clienti per ridurre il time to market delle loro soluzioni e migliorarne la produttività e posizionamento strategico sul mercato.
+
+**Visione:** Essere il partner di riferimento per aziende che cercano soluzioni software trasversali e innovative, capaci di adattarsi a qualsiasi settore e dimensione aziendale.
+
+**Approccio:** Sviluppiamo tecnologia proprietaria utilizzando tutti gli strumenti disponibili per massimizzare l'efficienza e consegnare il miglior risultato possibile. La nostra filosofia agile ci permette di essere sia co-creatori per startup innovative che partner strategici per aziende strutturate.
+
+PORTFOLIO SERVIZI E COMPETENZE CORE
+-----------------------------------
+
+**🤖 AI & DATA ENGINEERING** (Competenza distintiva)
+Sviluppiamo soluzioni di intelligenza artificiale e data engineering utilizzando Python e Clojure per creare sistemi intelligenti che si integrano seamlessly nei workflow aziendali. Machine learning, analisi predittiva e automazione dei processi decisionali.
+
+**🔒 DEVSECOPS & INFRASTRUTTURE** (Competenza distintiva)  
+Specializzazione in architetture cloud-native su AWS con Kubernetes, Docker e pipeline CI/CD avanzate. Partner ufficiale GitLab per soluzioni DevSecOps enterprise-grade che garantiscono sicurezza, scalabilità e continuous delivery.
+
+**⚡ SVILUPPO SOLUZIONI SOFTWARE CHIAVI IN MANO**
+Sviluppiamo soluzioni verticali e su misura per i nostri clienti: da landing page accattivanti, dashboard di monitoraggio a software gestionali completi. Erogati dal nostro cloud o direttamente da quello dei nostri clienti.
+
+Stack tecnologico moderno e performante:
+- Frontend: Node.js, React per interfacce responsive e user experience ottimizzate
+- Backend: Node.js, Python, Clojure per architetture scalabili e maintainable
+- Modalità operativa: full remote o on-site presso il cliente quando necessario
+
+**☁️ SERVIZI SAAS PROPRIETARI**
+- **ADE-Track**: È un software che si connette all'Agenzia delle Entrate e permette ai nostri clienti di scaricare in maniera automatica, tramite le nostre API, fatture e corrispettivi. Il tutto, tramite un'API semplice da invocare e scalabile. Ha un pricing basato sul consumo (0.025€ a fattura scaricata + setup iniziale)
+- Roadmap di servizi proprietari integrabili as-is in qualsiasi processo aziendale
+
+MODELLO DI PARTNERSHIP E CONSULENZA
+-----------------------------------
+
+**PARTNERSHIP STRATEGICHE**
+- **GitLab Partner Certificato**: Soluzioni DevSecOps integrate e supporto enterprise
+- **AWS Partnership**: Architetture cloud-native e ottimizzazione infrastrutturale  
+- **Network di Reseller**: Accesso privilegiato a tecnologie e strumenti enterprise
+
+**CONSULENZA TIME & MATERIAL**
+Grazie alla nostra expertise di più di 30 anni combinata nei 3 diversi settori IT, offriamo consulenze specialistiche e verticali in ogni ambito IT:
+- Sviluppo full stack e architetture scalabili
+- Integrazioni AI particolari e machine learning
+- Assessment infrastrutturali e security audit
+- Modernizzazione legacy e roadmap di evoluzione
+- Ottimizzazione performance e cost optimization cloud
+
+TRACK RECORD E RISULTATI
+------------------------
+
+La nostra esperienza consolidata ci ha portato a supportare con successo aziende in diverse fasi di crescita:
+
+**Per Startup in Co-creazione:**
+✓ Co-design di architetture tecnologiche scalabili from scratch
+✓ MVP development con focus su product-market fit
+✓ Setup completo ecosistemi di sviluppo agile
+
+**Per Aziende Strutturate:**
+✓ Bootstrap e ottimizzazione ambienti di produzione enterprise
+✓ Hardening e implementazione protocolli di sicurezza avanzati
+✓ Sviluppo flussi di registrazione e autenticazione sicuri
+✓ Integrazione pagamenti con Stripe e altri gateway
+✓ Migrazione verso architetture cloud-native e microservizi
+
+METODOLOGIA DI LAVORO AGILE
+--------------------------
+
+**Il nostro processo è trasparente, agile e orientato al risultato:**
+
+1. **PRIMO CONTATTO** - Il cliente ci scrive tramite form e ci dice chi è e perché ci cerca
+2. **ASSESSMENT GRATUITO** - Forniamo un'ora di consulenza remota per comprendere meglio il contesto del cliente e l'esigenza specifica
+3. **SOLUZIONE SU MISURA** - Identifichiamo la soluzione migliore per lui (consulenza, progetto chiavi in mano) e procediamo con l'offerta
+4. **INIZIO LAVORI** - Sviluppo iterativo con metodologie agile, sprint planning e feedback continuo
+
+**Modalità Operative:**
+- **Full Remote First**: Massima flessibilità e accesso ai migliori talenti
+- **On-site quando necessario**: Presenza presso il cliente per workshop, training e implementazioni critiche
+- **Hybrid Approach**: Combinazione ottimale di remote e presenza fisica in base alle esigenze del progetto
+
+DIFFERENZIATORI COMPETITIVI
+---------------------------
+
+**🚀 Software Proprietario Integrable As-Is**
+Non sviluppiamo solo custom, ma creiamo soluzioni proprietarie pronte all'uso che si integrano immediatamente nei processi aziendali esistenti.
+
+**🤝 Partnership Ecosystem Consolidato**
+Accesso privilegiato a tecnologie enterprise tramite partnership strategiche con leader di mercato (GitLab, AWS).
+
+**🎯 Expertise Trasversale Multi-Industry**
+Non siamo vincolati a settori specifici: le nostre soluzioni si adattano a qualsiasi industry grazie all'approccio technology-agnostic e alla profonda comprensione dei processi business.
+
+**⚡ Metodologia Agile Estrema**
+Utilizziamo tutti gli strumenti e le tecnologie disponibili per massimizzare la produttività e consegnare sempre il miglior risultato possibile nel minor tempo.
+
+**🧠 Focus AI & Data Engineering**
+Competenza distintiva nell'integrazione di intelligenza artificiale e data engineering per automazione e insights business-critical.
+
+**🔒 DevSecOps Native**
+Security e operational excellence integrate fin dalla fase di design, non come afterthought.
+
+---
+
+*Databite SRL - Software proprietario e partnership strategiche per aziende che guardano al futuro*
+
+---
+
+**TECHNOLOGY STACK OVERVIEW**
+
+**Frontend & User Experience**
+- Node.js, React per interfacce moderne e responsive
+- Focus su UX/UI ottimizzate per adoption e conversion
+
+**Backend & APIs**  
+- Node.js, Python, Clojure per performance e maintainability
+- Architetture microservices e API-first design
+
+**AI & Data Engineering**
+- Python, Clojure per machine learning e data processing
+- Pipeline di data engineering scalabili e real-time analytics
+
+**DevSecOps & Infrastructure**
+- AWS cloud-native con Kubernetes orchestration
+- Docker containerization e GitLab CI/CD
+- Security-by-design e infrastructure-as-code
